@@ -1,0 +1,10 @@
+
+######################################################
+################ Amelia Version 3.2.0 ################
+######################################################
+
+The Resistance Database
+Program Creator: Ryan Haines
+Year of Release: 1994
+
+Type 'help' and press Enter for more information.

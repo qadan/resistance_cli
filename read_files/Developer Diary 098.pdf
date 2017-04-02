@@ -1,0 +1,24 @@
+March 3, 1994
+Developer Diary 098
+Ryan Haines
+
+The newest version of our database V.I. is just about ready. Amelia has been quite the project, but she gets better
+everytime. One day she will be a true A.I. program. But, for now, with version 3.2.0 her database knowledge has
+increased and she is able to comment on more things. Beginner agents will only see the standard three commands when they
+boot Amy up, but there is an invisible list for those that know what to ask.
+
+Remember to type 'query' before inputting an option. Amy likes having conversations, so don't just bark commands! Some of the new options are:
+
+1) "Ryan" - That's me!
+2) "Sabine"
+3) "Isaac"
+4) "VI"
+5) "AI"
+6) "The Resistance"
+7) "The Shadow Order"
+8) "CodeR"
+9) "Three Headed Snake"
+10) "The Snake"
+
+I am adding new words and phrases to her database all the time. Just because you do not see it on the list here doesn't mean you shouldn't ask Amy. You never know what she can talk about if you don't ask!
+

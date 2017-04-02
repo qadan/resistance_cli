@@ -1,0 +1,3 @@
+
+Gets a list of all of the files on the system, both on this machine itself as well as any external drives connected to
+it.

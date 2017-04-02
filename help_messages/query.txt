@@ -1,0 +1,7 @@
+
+Detailed information about the "query" command can be found in the file:
+
+  Virtual Intelligence Tutorial for New Agents.pdf
+
+Type in the command "read Virtual Intelligence Tutorial for New Agents.pdf" for
+more information.

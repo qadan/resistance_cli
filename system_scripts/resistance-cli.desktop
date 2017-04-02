@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=resistance_cli
+Terminal=true
+Exec=/home/ubuntu/resistance_cli/resistance_cli.sh
+Type=Application
+Categories=Utility

@@ -1,0 +1,12 @@
+{
+  "invalid_query": "No results found.",
+  "command_not_found": "Sorry, '%s' isn't a command. Try 'help' for a list of commands.",
+  "command_called_incorrectly": "Sorry, I couldn't understand your command. Try 'help %s' for more info about this command.",
+  "help_not_found": "Sorry, I couldn't find help regarding '%s'. Try simply 'help' for a list of commands you could get help about.",
+  "file_not_found": "Sorry, I can't seem to find a file called '%s'. Try the 'list' command for a list of files on the system.",
+  "system_description": "Files on the local system:",
+  "usb_description": "Files on the USB drive:",
+  "tried_to_read_png": "Sorry, I don't think I'll be able to print this image to the screen. You might have better luck using the 'print' command to put it on a sheet of paper.",
+  "cannot_print": "Sorry, I'm not able to print this kind of file.",
+  "already_printed": "You've already printed this file! Please don't waste paper :)"
+}

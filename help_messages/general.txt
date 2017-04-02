@@ -1,0 +1,18 @@
+
+The following commands are available to use:
+
+  query
+  list
+  help
+  read
+  print
+
+To use a command, type in the name of the command and press "Enter".
+
+For help with a command, type in the name of the command, followed by a space,
+then followed by the name of the command. For example, type in:
+
+> help list
+
+And then press "Enter" to get information about the "list" command.
+

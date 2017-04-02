@@ -1,0 +1,6 @@
+
+Prints an image file to the printer.
+
+Use the syntax "print file.jpg", where file.jpg is replaced with the name of the image file you would like to print.
+
+File names are case sensitive.
