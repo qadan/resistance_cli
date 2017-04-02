@@ -22,6 +22,18 @@ we_printed_it = False
 with open('general_responses.json', 'r') as f:
     general_responses = loads(f.read())
 
+# Hang onto a list of file paths
+file_paths = [
+    {
+        'path': 'read_files',
+        'message': general_responses['system_description'],
+    },
+    {
+        'path': '/media/usb0',
+        'message': general_responses['usb_description'],
+    }
+]
+
 '''
 Commands for The Resistance's CLI.
 '''
@@ -82,11 +94,11 @@ class resistance_commands:
             print(general_responses['file_not_found'] % (file_string))
             return
 
-        # Now, clear the screen. We're going to re-populate the buffer once
-        # we're done here.
-        os.system('clear')
         # If this is a PDF, print it to the screen.
         if file_thing.suffix == '.pdf':
+            # Now, clear the screen. We're going to re-populate the buffer once
+            # we're done here.
+            os.system('clear')
             with open("read_files/%s" % (file_string), 'r') as f:
                 pdf = f.read()
 
@@ -112,29 +124,17 @@ class resistance_commands:
     Lists the 'files' available to us.
     '''
     def list():
-        file_paths = [
-                {
-                    'path': 'read_files',
-                    'message': general_responses['system_description'],
-                },
-                {
-                    'path': '/media/usb0',
-                    'message': general_responses['usb_description'],
-                }
-            ]
         for file_path in file_paths:
             directory = Path(file_path['path'])
             if directory.is_dir():
-                buffered_lines.append(file_path['message'])
-                print(file_path['message'])
                 files = os.listdir(file_path['path'])
-                for filename in files:
-                    buffered_lines.append(filename)
-                    print(filename)
+                if len(files) > 0:
+                    buffered_lines.append(file_path['message'])
+                    print(file_path['message'])
+                    for filename in files:
+                        buffered_lines.append(filename)
+                        print(filename)
 
-            buffered_lines.append("")
-            print("")
-        return
 
     '''
     Prints out something. There's one thing, really.
@@ -153,7 +153,18 @@ class resistance_commands:
             we_printed_it = True
             return
 
-        buffered_lines.append(general_responses['cannot_print'])
+        file_exists = False
+        for file_path in file_paths:
+            file_to_find = Path(file_path['path'] + '/%s' % (file_string))
+            if file_to_find.is_file():
+                file_exists = True
+
+        if file_exists:
+            buffered_lines.append(general_responses['cannot_print'])
+            print(general_responses['cannot_print'])
+        else:
+            buffered_lines.append(general_responses['file_not_found'] % (file_string))
+            print(general_responses['file_not_found'] % (file_string))
 
 
 '''
@@ -194,6 +205,7 @@ def accept_input():
         split_text = user_text.split(' ', 1)
         # Take the appropriate action, potentially.
         if not hasattr(resistance_commands, split_text[0]):
+            buffered_lines.append(general_responses['command_not_found'] % (split_text[0]))
             print(general_responses['command_not_found'] % (split_text[0]))
             return
 
@@ -204,6 +216,7 @@ def accept_input():
             else:
                 to_call(split_text[1].strip())
         except TypeError as e:
+            buffered_lines.append(general_responses['command_called_incorrectly'] % split_text[0])
             print(general_responses['command_called_incorrectly'] % (split_text[0]))
 
 '''

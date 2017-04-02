@@ -1,10 +1,16 @@
 # Base installation
 
-system_scripts/resistance_cli.conf goes into /etc/systemd
+sudo apt-get install usbmount
+
 create the folder /etc/systemd/system/getty@tty1.service.d
 system_scripts/override.conf goes into /etc/systemd/system/getty@tty1.service.d
 
-TODO: Printer driver?
+modify .profile to include:
+cd /home/ubuntu/resistance_cli
+python3 resistance_cli.py
+
+TODO: Printer driver? Hopefully not :/
+TODO2: Move all the files to the drive that are necessary
 
 # Modification
 
